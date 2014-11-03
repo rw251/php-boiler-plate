@@ -2,6 +2,22 @@
     "minimum-stability": "dev",
     "require": {
         "google/apiclient": "1.0.*@beta",
-        "silex/silex": "~1.2"
+        "silex/silex": "~1.2",
+        "koala-framework/composer-extra-assets": "dev-master"
+    },
+    "extra": {
+        "require-npm": {
+            "grunt": "*",
+            "grunt-cli": "*",
+            "grunt-bower-concat": "*",
+            "grunt-contrib-uglify": "*",
+            "grunt-contrib-jshint": "*",
+            "grunt-contrib-cssmin": "*",
+            "grunt-contrib-watch": "*"
+        },
+        "require-bower": {
+            "jquery": "*",
+            "bootstrap" : "*"
+        }
     }
 }
