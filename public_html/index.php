@@ -2,14 +2,11 @@
 
 set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__ .'/../vendor/google/apiclient/src');
 require_once __DIR__.'/../vendor/autoload.php';
-include __DIR__.'/../config/db.php';
+require_once __DIR__.'/../server/db.php';
+require_once __DIR__.'/../server/config.oauth.php';
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
-const CLIENT_ID = '[[TBA]]';
-const CLIENT_SECRET = '[[TBA]]';
-const APPLICATION_NAME = "[[TBA]]";
 
 $client = new Google_Client();
 $client->setApplicationName(APPLICATION_NAME);

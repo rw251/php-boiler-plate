@@ -1,8 +1,28 @@
 {
     "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "google/apiclient",
+                "version": "1.0.0",
+                "source": {
+                    "url": "https://github.com/google/google-api-php-client.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "classmap": [
+                        "src/"
+                    ]
+                }
+            }
+        }
+    ],
     "require": {
-        "google/apiclient": "1.0.*@beta",
         "silex/silex": "~1.2",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "google/apiclient": "1.0.*",
         "koala-framework/composer-extra-assets": "dev-master"
     },
     "extra": {
