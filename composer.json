@@ -30,6 +30,8 @@
             "grunt": "*",
             "grunt-cli": "*",
             "grunt-bower-concat": "*",
+            "grunt-contrib-concat": "*",
+            "grunt-concat-css": "*",
             "grunt-contrib-uglify": "*",
             "grunt-contrib-jshint": "*",
             "grunt-contrib-cssmin": "*",
