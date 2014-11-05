@@ -1,71 +1,33 @@
-<!DOCTYPE html>
-<html lang='en'>
+{% extends 'template.html' %} 
+{% block content %}
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li class="active">
+            <div id="signinButton">
+                <span class="g-signin" data-scope="https://www.googleapis.com/auth/plus.profile.emails.read" data-clientid="{{ CLIENT_ID }}" data-redirecturi="postmessage" data-accesstype="offline" data-cookiepolicy="http://filmalert.cf" data-callback="onSignInCallback"></span>
+            </div>
+            <div id="profile"></div>
+        </li>
+    </ul>
+    <h3 class="text-muted">{{ APPLICATION_NAME }}</h3>
+</div>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'>
-    <meta name='description' content='TBA'>
-    <meta name='author' content='Richard Williams'>
-    <link rel='icon' href='/favicon.ico' sizes='16x16 32x32 48x48 64x64' type='image/vnd.microsoft.icon'>
-    <link rel='stylesheet' href='build/aggregated.min.css'>
-    <title>{{ APPLICATION_NAME }}</title>
-</head>
-
-<body role="document">
-    <div class='container'>
-
-        <div class="header">
-            <ul class="nav nav-pills pull-right">
-                <li class="active">
-                    <div id="signinButton">
-                        <span class="g-signin" data-scope="https://www.googleapis.com/auth/plus.profile.emails.read" data-clientid="{{ CLIENT_ID }}" data-redirecturi="postmessage" data-accesstype="offline" data-cookiepolicy="http://filmalert.cf" data-callback="onSignInCallback"></span>
-                    </div>
-                    <div id="profile"></div>
-                </li>
-            </ul>
-            <h3 class="text-muted">{{ APPLICATION_NAME }}</h3>
-        </div>
-
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <button id="logout" type="button" class="btn btn-primary">Log out</button>
-                    </div>
-                </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button id="logout" type="button" class="btn btn-primary">Log out</button>
             </div>
         </div>
     </div>
-
-    <div id="st" style="display:none">{{ STATE }}</div>
-    <script src="build/aggregated.min.js"></script>
-    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'TBA', 'auto');
-        ga('send', 'pageview');
-    </script>
-</body>
-
-</html>
+</div>
+{% endblock %}
